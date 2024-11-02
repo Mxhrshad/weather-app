@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import Weather from "./components/weather";
 
 function App() {
 
@@ -14,7 +15,6 @@ function App() {
       axios.get(url)
       .then((response) => {
         setData(response.data)
-        console.log(response.data)
 
       })
       setLocation("")
@@ -27,6 +27,8 @@ function App() {
         <input type="text" className="py-3 px-6 w-[700px]
         text-lg rounded-3xl border border-gray-200 text-gray-600 placeholder:text-gray-400 focus:outline-none bg-white-600/100 shadow-md" placeholder="Enter location" value={location} onChange={(e) =>setLocation(e.target.value)} onKeyDownCapture={searchLocation} />
       </div>
+
+      <Weather weatherData = {data} />
     </div>
   )
 }
