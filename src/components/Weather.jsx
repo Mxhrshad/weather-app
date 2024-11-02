@@ -3,10 +3,10 @@ export default function Weather({weatherData}){
     return(
         <div>
             {weatherData.weather ? (
-                <div className="w-[500px] h-[250px] bg-gray-300 shadow-lg rounded-xl m-auto relative px-6 top[10%]">
+                <div className="laptop:w-[500px] phone:w-[300px] h-[250px] bg-gray-300 shadow-lg rounded-xl m-auto relative px-6 top[10%]">
                     <div className="flex justify-between w-full">
                         <div className="w-1/2 my-4 mx-auto flex justify-between items-center">
-                            <div className="flex flex-col items-start justify-between h-full">
+                            <div className="flex flex-col items-start h-full">
                                 <div>
                                     <p className="text-xl">
                                         {weatherData.name},
@@ -17,7 +17,7 @@ export default function Weather({weatherData}){
                                     </p>
                                 </div>
                                 <div>
-                                    <h1 className="text-6xl font-semibold">
+                                    <h1 className="text-5xl font-semibold mt-10">
                                         {weatherData.main.temp.toFixed()} °C
                                     </h1>
                                 </div>
